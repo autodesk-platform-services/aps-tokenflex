@@ -1,6 +1,6 @@
 # APS Token Flex Web App
 
-A web application for visualizing Autodesk Platform Services (APS) Token Flex usage data with interactive charts and an AI-powered chatbot assistant.
+A web application for visualizing Autodesk Platform Services (APS) Token Flex usage data with interactive charts. This sample is onlu for customers with enterprise plan.
 
 ## Features
 
