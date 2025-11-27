@@ -6,7 +6,6 @@ A web application for visualizing Autodesk Platform Services (APS) Token Flex us
 
 - OAuth 2.0 authentication with Autodesk
 - Six interactive charts displaying Token Flex usage metrics
-- AI-powered chatbot for data insights and navigation
 - Modern UI with Chart.js visualizations
 
 ## Prerequisites
@@ -112,20 +111,6 @@ aps-tokenflex-webapp/
    - Time-series trends
    - And more...
 
-### Using the Chatbot
-
-1. Click the black chat icon in the bottom-right corner
-2. Ask questions about:
-   - Token Flex usage data
-   - Navigation help
-   - Data interpretation
-   - Feature explanations
-
-**Example questions:**
-- "What is Token Flex?"
-- "How can I see my usage data?"
-- "Explain the charts"
-- "What's the most used product?"
 
 ## API Endpoints
 
