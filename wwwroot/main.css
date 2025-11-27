@@ -1,0 +1,328 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: ArtifaktElement;
+  overflow: hidden; /* Prevent the page from zooming out */
+}
+
+#header {
+  height: 3em;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chart-container {
+  display: grid; /* Use grid layout */
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 1em; /* Space between charts */
+  height: calc(100vh - 3em); /* Adjusts for header height */
+  padding: 1em;
+  box-sizing: border-box;
+  overflow: hidden; /* Prevent overflowing content */
+}
+
+.chart-wrapper {
+  width: 100%; /* Full width of the container */
+  height: 100%; /* Full height of the container */
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 1em;
+  display: flex; /* Enables flexbox for centering */
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+  box-sizing: border-box; /* Includes padding and border in dimensions */
+  overflow: hidden; /* Prevents overflow */
+}
+
+.chart-content {
+  max-width: 100%; /* Ensures content doesn't exceed wrapper width */
+  max-height: 100%; /* Ensures content doesn't exceed wrapper height */
+  object-fit: contain; /* Adjusts inner content to fit */
+}
+
+#myChart1,
+#myChart2,
+#myChart3,
+#myChart4,
+#myChart5,
+#myChart6 {
+  width: 100%;
+  height: 100%; /* Ensures the chart fills the wrapper */
+  object-fit: contain; /* Ensures charts stay contained within their wrappers */
+}
+
+#header > * {
+  height: 2em;
+  margin: 0 0.5em;
+}
+
+#login {
+  font-family: ArtifaktElement;
+  font-size: 1em;
+}
+
+#header .title {
+  height: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .chart-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+  }
+
+  .chart-wrapper {
+    width: 100%; /* Ensure chart fills the wrapper */
+  }
+}
+
+.icon-hub:before {
+  background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/apps-16.svg); /* or https://raw.githubusercontent.com/primer/octicons/main/icons/stack-16.svg */
+  background-size: cover;
+}
+
+.icon-project:before {
+  background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/project-16.svg); /* or https://raw.githubusercontent.com/primer/octicons/main/icons/organization-16.svg */
+  background-size: cover;
+}
+
+.icon-my-folder:before {
+  background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/file-directory-16.svg);
+  background-size: cover;
+}
+
+.icon-item:before {
+  background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/file-16.svg);
+  background-size: cover;
+}
+
+.icon-version:before {
+  background-image: url(https://raw.githubusercontent.com/primer/octicons/main/icons/clock-16.svg);
+  background-size: cover;
+}
+
+/* Chatbot Styles */
+#chatbot-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #2c2c2c;
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+#chatbot-toggle:hover {
+  background: #1a1a1a;
+  transform: scale(1.05);
+}
+
+#chatbot-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 350px;
+  height: 500px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  z-index: 1001;
+  transition: all 0.3s ease;
+  border: 1px solid #e0e0e0;
+}
+
+#chatbot-container.chatbot-hidden {
+  transform: translateY(100%) scale(0.8);
+  opacity: 0;
+  pointer-events: none;
+}
+
+#chatbot-header {
+  background: #2c2c2c;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 12px 12px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+}
+
+#chatbot-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#chatbot-messages {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chatbot-message {
+  display: flex;
+  flex-direction: column;
+  max-width: 85%;
+}
+
+.bot-message {
+  align-self: flex-start;
+}
+
+.user-message {
+  align-self: flex-end;
+}
+
+.message-content {
+  padding: 10px 15px;
+  border-radius: 18px;
+  font-size: 14px;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.bot-message .message-content {
+  background: #f0f0f0;
+  color: #333;
+  border-bottom-left-radius: 6px;
+}
+
+.user-message .message-content {
+  background: #2c2c2c;
+  color: white;
+  border-bottom-right-radius: 6px;
+}
+
+.message-timestamp {
+  font-size: 11px;
+  color: #888;
+  margin-top: 4px;
+  align-self: flex-end;
+}
+
+#chatbot-input-container {
+  padding: 15px;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  gap: 10px;
+}
+
+#chatbot-input {
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 10px 15px;
+  font-size: 14px;
+  outline: none;
+  font-family: inherit;
+}
+
+#chatbot-input:focus {
+  border-color: #2c2c2c;
+}
+
+#chatbot-send {
+  background: #2c2c2c;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+#chatbot-send:hover {
+  background: #1a1a1a;
+}
+
+#chatbot-send:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* Loading animation */
+.typing-indicator {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 15px;
+  background: #f0f0f0;
+  border-radius: 18px;
+  border-bottom-left-radius: 6px;
+  width: fit-content;
+}
+
+.typing-dot {
+  width: 6px;
+  height: 6px;
+  background: #888;
+  border-radius: 50%;
+  animation: typing 1.4s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typing {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  30% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+}
+
+/* Mobile responsiveness for chatbot */
+@media (max-width: 768px) {
+  #chatbot-container {
+    width: calc(100vw - 40px);
+    height: calc(100vh - 100px);
+    bottom: 20px;
+    right: 20px;
+    left: 20px;
+  }
+  
+  #chatbot-toggle {
+    right: 20px;
+    bottom: 20px;
+  }
+}

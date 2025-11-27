@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="https://cdn.autodesk.io/favicon.ico">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/main.css">
+
+    <title>Autodesk Platform Services: Token Flex Usage Insights using Chart.js</title>
+</head>
+
+<body>
+    <div id="header">
+        <img class="logo" src="https://cdn.autodesk.io/logo/black/stacked.png" alt="Autodesk Platform Services">
+        <span class="title">Token Flex Usage Insights using Chart.js</span>
+        <select id="dropdown">
+            <option value="" disabled selected>Loading...</option>
+        </select>
+        <button id="login" style="visibility: hidden;">Login</button>
+    </div>
+
+    <div class="chart-container">
+        <div class="chart-wrapper">
+            <canvas id="myChart1"></canvas>
+        </div>
+        <div class="chart-wrapper">
+            <canvas id="myChart2"></canvas>
+        </div>
+        <div class="chart-wrapper">
+            <canvas id="myChart3"></canvas>
+        </div>
+        <div class="chart-wrapper">
+            <canvas id="myChart4"></canvas>
+        </div>
+        <div class="chart-wrapper">
+            <canvas id="myChart5"></canvas>
+        </div>
+        <div class="chart-wrapper">
+            <canvas id="myChart6"></canvas>
+        </div>
+    </div>
+
+    <!-- Chatbot -->
+    <div id="chatbot-container" class="chatbot-hidden">
+        <div id="chatbot-header">
+            <span>Token Flex Assistant</span>
+            <button id="chatbot-close">&times;</button>
+        </div>
+        <div id="chatbot-messages">
+            <div class="chatbot-message bot-message">
+                <div class="message-content">
+                    Hello! I'm your Token Flex Assistant. I can help you understand your usage data, explain charts, or
+                    answer questions about Token Flex. How can I help you today?
+                </div>
+            </div>
+        </div>
+        <div id="chatbot-input-container">
+            <input type="text" id="chatbot-input" placeholder="Type your question here..." maxlength="500">
+            <button id="chatbot-send">Send</button>
+        </div>
+    </div>
+
+    <!-- Chatbot Toggle Button -->
+    <button id="chatbot-toggle">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M12 2C6.48 2 2 6.48 2 12C2 13.54 2.36 14.99 3.01 16.28L2 22L7.72 20.99C9.01 21.64 10.46 22 12 22C17.52 22 22 17.52 22 12S17.52 2 12 2ZM8 13H6V11H8V13ZM13 13H11V11H13V13ZM18 13H16V11H18V13Z"
+                fill="currentColor" />
+        </svg>
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+    <script src="/chatbot.js"></script>
+    <script src="/main.js" type="module"></script>
+</body>
+
+</html>
